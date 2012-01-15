@@ -1,6 +1,7 @@
 # $Id: PKGBUILD 145614 2011-12-24 03:54:58Z dreisner $
 # Contributor: damir <damir@archlinux.org>
 # Contributor: Kevin Edmonds <edmondskevin@hotmail.com>
+# Contributor: John Karahalis <john.karahalis@gmail.com>
 
 pkgname=libmtp
 pkgver=1.1.1
