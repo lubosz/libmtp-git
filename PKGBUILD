@@ -5,8 +5,8 @@
 # Contributor: Kevin Edmonds <edmondskevin@hotmail.com>
 # Contributor: John Karahalis <john.karahalis@gmail.com>
 
-pkgname=libmtp
-pkgver=1.1.1
+pkgname=libmtp-git
+pkgver=20110114
 pkgrel=1
 pkgdesc="library implementation of the Media Transfer Protocol"
 arch=("i686" "x86_64")
@@ -14,16 +14,34 @@ url="http://libmtp.sourceforge.net"
 license=('LGPL')
 depends=('libusb-compat')
 options=('!libtool')
-source=("http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-md5sums=('073e1c2a00ba377f68dce47727e185ae')
+conflicts=('libmtp')
+provides=('libmtp')
+
+_gitroot="git://github.com/ynezz/libmtp.git"
+_gitname="libmtp"
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}"
+  msg "Connecting to Git server...."
+
+  if [-d $_gitname ]; then
+    cd $_gitname && git pull origin
+  else
+    git clone $_gitroot $_gitname
+  fi
+
+  msg "Git checkout done or server timeout"
+  msg "Starting make..."
+
+  rm -rf "${srcdir}/${_gitname-build}"
+  git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname-build}"
+  cd "${srcdir}/${_gitname-build}"
+
   ./configure --prefix=/usr
   make
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${_gitname-build}"
   make DESTDIR="${pkgdir}" install
 }
