@@ -6,7 +6,7 @@
 # Contributor: John Karahalis <john.karahalis@gmail.com>
 
 pkgname=libmtp-git
-pkgver=20110114
+pkgver=20120114
 pkgrel=1
 pkgdesc="library implementation of the Media Transfer Protocol"
 arch=("i686" "x86_64")
@@ -24,7 +24,7 @@ build() {
   cd "${srcdir}"
   msg "Connecting to Git server...."
 
-  if [-d $_gitname ]; then
+  if [ -d $_gitname ]; then
     cd $_gitname && git pull origin
   else
     git clone $_gitroot $_gitname
