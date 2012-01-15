@@ -17,7 +17,7 @@ options=('!libtool')
 conflicts=('libmtp')
 provides=('libmtp')
 
-_gitroot="git://github.com/ynezz/libmtp.git"
+_gitroot="git://libmtp.git.sourceforge.net/gitroot/libmtp/libmtp"
 _gitname="libmtp"
 
 build() {
@@ -37,7 +37,7 @@ build() {
   git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
   cd "${srcdir}/${_gitname}-build"
 
-  ./autogen.sh
+  yes | ./autogen.sh
   ./configure --prefix=/usr
   make
 }
