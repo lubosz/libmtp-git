@@ -4,9 +4,11 @@
 # Contributor: damir <damir@archlinux.org>
 # Contributor: Kevin Edmonds <edmondskevin@hotmail.com>
 # Contributor: John Karahalis <john.karahalis@gmail.com>
+#
+# GitHub repository: https://github.com/openjck/libmtp-git
 
 pkgname=libmtp-git
-pkgver=20120114
+pkgver=20120121
 pkgrel=1
 pkgdesc="library implementation of the Media Transfer Protocol"
 arch=("i686" "x86_64")
