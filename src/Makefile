@@ -1,0 +1,2 @@
+aur: PKGBUILD
+	makepkg --source
