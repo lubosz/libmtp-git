@@ -1,5 +1,3 @@
-syntax: glob
-
 src/src
 src/pkg
 src/libmtp-git-20120409-1.src.tar.gz
