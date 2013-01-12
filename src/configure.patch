@@ -1,0 +1,13 @@
+diff --git a/configure.ac b/configure.ac
+index 6fc47a2..941dc5b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -4,7 +4,7 @@ AC_INIT([libmtp], [1.1.5], [libmtp-discuss@lists.sourceforge.net])
+ AC_CONFIG_MACRO_DIR([m4])
+ AM_INIT_AUTOMAKE([foreign])
+ AC_CONFIG_SRCDIR([src/libmtp.c])
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ 
+ # Checks for programs.
+ AC_PROG_CC
